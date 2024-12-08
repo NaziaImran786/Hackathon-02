@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import LogoBanner from './logo'
 import { Card } from './ui/card'
 import { CalendarDays, User } from 'lucide-react'
 

@@ -6,7 +6,7 @@ import { LeatestCards } from "@/constant/leatestcard";
 const LeatestCard = ({ loop }: { loop: LeatestCards[] }) => {
   return (
     <>
-      {loop.map((item, index) => {
+      {loop.map((item) => {
         return (
           <Card className="relative w-[360px] h-[325px] bg-[#F7F7F7] shadow-lg hover:bg-[#2F1AC4]">
             
