@@ -8,8 +8,9 @@ const ProductCard = ({ loop }: { loop: FeatureCard[] }) => {
     <>
     {loop.map((item, index) => {
         return (
-    <Card className="relative w-[270px] h-[361px] bg-white shadow-lg hover:bg-[#2F1AC4]">
-      key={index}
+    <Card className="relative w-[270px] h-[361px] bg-white shadow-lg hover:bg-[#2F1AC4]" 
+    key={index}
+    >     
       
       {/* Product Image */}
       <div className="absolute w-full h-[236px] bg-[#F6F7FB] top-0 left-0 flex items-center justify-center">

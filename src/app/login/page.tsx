@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from "react"
-import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"

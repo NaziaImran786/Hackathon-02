@@ -6,9 +6,9 @@ import { CategoryCards } from "@/constant/categorycard";
 const CategoryCard = ({ loop }: { loop: CategoryCards[] }) => {
   return (
     <>
-      {loop.map((item) => {
+      {loop.map((item, index) => {
         return (
-          <Card className="relative w-[270px] h-[350px] bg-transparent ">
+          <Card className="relative w-[270px] h-[350px] bg-transparent" key={index} >
             
             {/* Product Image */}
             <div className="absolute w-full h-[236px] bg-[#F6F7FB] top-0 left-0 flex items-center rounded-[50%] border-b-4 hover:border-blue-600  justify-center">
