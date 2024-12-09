@@ -8,7 +8,7 @@ const TrendingCard = ({ loop }: { loop: TrendingCards[] }) => {
     <>
       {loop.map((item, index) => {
         return (
-    <Card className="relative w-[270px] h-[350px] bg-white shadow-lg hover:bg-[#2F1AC4]" key={index}>
+    <Card className="relative w-[240px] h-[350px] bg-white shadow-lg hover:bg-[#2F1AC4]" key={index}>
       
       
       {/* Product Image */}

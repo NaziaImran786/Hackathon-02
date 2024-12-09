@@ -8,7 +8,7 @@ const LeatestCard = ({ loop }: { loop: LeatestCards[] }) => {
     <>
       {loop.map((item, index) => {
         return (
-          <Card className="relative w-[360px] h-[325px] bg-[#F7F7F7] shadow-lg hover:bg-[#2F1AC4]" key={index}>
+          <Card className="relative w-[300px] h-[325px] bg-[#F7F7F7] shadow-lg hover:bg-[#2F1AC4]" key={index}>
             
             <div className="bg-[#F7F7F7]  absolute left-[19.19%] right-[19.19%] top-[14.44%] bottom-[3.25%] ">
               {/* Image goes here */}

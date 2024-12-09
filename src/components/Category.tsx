@@ -15,7 +15,7 @@ function Category() {
 
         {/* card div */}
         <div className="container mx-auto px-4 mb-[125px]  ">
-          <div className="mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <CategoryCard loop={CategoryCards} />
           </div>
         </div>

@@ -1,625 +1,144 @@
-import React from "react";
+import FilterSection from "@/components/FilterSection";
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Grid2X2, Heart, List, Search, ShoppingCart } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import Link from "next/link";
 
-export default function Product() {
+const products = [
+  {
+    id: 1,
+    name: "Vel elit euismod",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g1.png",
+  },
+  {
+    id: 2,
+    name: "Ultricies condimentum imperdiet",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g2.png",
+  },
+  {
+    id: 3,
+    name: "Vitae suspendisse sed",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g3.png",
+  },
+  {
+    id: 4,
+    name: "Sed at fermentum",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g4.png",
+  },
+  {
+    id: 5,
+    name: "Fusce pellentesque at",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g5.png",
+  },
+  {
+    id: 6,
+    name: "Vestibulum magna laoreet",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g6.png",
+  },
+  {
+    id: 7,
+    name: "Sollicitudin amet orci",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g7.png",
+  },
+  {
+    id: 8,
+    name: "Ultrices mauris sit",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g8.png",
+  },
+  {
+    id: 9,
+    name: "Pellentesque condimentum ac",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g9.png",
+  },
+  {
+    id: 10,
+    name: "Lectus vulputate faucibus",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g10.png",
+  },
+  {
+    id: 11,
+    name: "Purus risus, ut",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g11.png",
+  },
+  {
+    id: 4,
+    name: "Sed at fermentum",
+    price: "$26.00 ",
+    prevPrice: "$42.00",
+    img: "/g12.png",
+  },
+];
+const Page = () => {
   return (
-    <section>
-      <div className="w-full px-[40px] md:pl-[120px] h-[286px] bg-[#F6F5FF] ">
-        {/* Banner content can be added here */}
-
-        <div className="w-[314px] pt-[106px] ">
-          <h1 className="text-[36px] leading-[42px] font-['Josefin_Sans'] text-[#101750] text-center mb-2">
-            Shop Grid Default
-          </h1>
-
-          <div className="flex items-center justify-center gap-1 text-base font-medium font-['Lato']">
-            <span className="text-black">Home</span>
-            <span className="text-black">.</span>
-            <span className="text-black">Pages</span>
-            <span className="text-black">.</span>
-            <span className="text-[#FB2E86]">Product</span>
-          </div>
-        </div>
+    <main className="mt-10">
+      <FilterSection
+        textTitle={"Shop Grid Default"}
+        textNavigation={"Home . Pages . "}
+        pageName={"Shop Grid Default"}
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 place-self-center mx-10 mt-16">
+        {products.map((item, index) => (
+          <Link href={`/${item.id}`} key={index}>
+            <div className="bg-slate-100 w-[270px] h-[280px] flex justify-center items-center">
+              <Image
+                src={item.img}
+                alt={item.name}
+                width={201}
+                height={201}
+                className="w-auto h-auto"
+              />
+            </div>
+            <div className="flex justify-center items-center flex-col">
+              <h1 className="text-lg text-center font-bold text-1 text-indigo-950 mt-4">
+                {item.name}
+              </h1>
+              <Image
+                src={"/sl2.png"}
+                alt="pagination-img"
+                width={42}
+                height={10}
+                className="mt-2"
+              />
+              <div className="flex justify-center gap-x-3 mt-3 text-1 text-sm">
+                <p className="text-indigo-900">{item.price}</p>
+                <p className="text-red-600 line-through">{item.prevPrice}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
-
-      <div className="container w-[95%] 2xl:w-[1920px] mx-auto mt-[124px] mb-[144]">
-        <div className="w-full max-w-[1171px] mx-auto py-4 flex items-center justify-between ">
-          <div className="space-y-2">
-            <h1 className="text-[22px] leading-[26px] text-[#151875] font-['Josefin_Sans']">
-              Ecommerce Acceories & Fashion item
-            </h1>
-            <p className="text-xs text-[#8A8FB9]">
-              About 9,620 results (0.62 seconds)
-            </p>
-          </div>
-
-          <div className="flex items-center justify-end gap-6 mt-4">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3F509E]">Per Page:</span>
-              <Select defaultValue="10">
-                <SelectTrigger className="w-[100px] border-[#E7E6EF]">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="10">10</SelectItem>
-                  <SelectItem value="20">20</SelectItem>
-                  <SelectItem value="50">50</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-[#3F509E]">Sort By:</span>
-              <Select defaultValue="best-match">
-                <SelectTrigger className="w-[120px] border-[#E7E6EF]">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="best-match">Best Match</SelectItem>
-                  <SelectItem value="price-low">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high">Price: High to Low</SelectItem>
-                  <SelectItem value="newest">Newest First</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-[#3F509E]">View:</span>
-              <ToggleGroup type="single" defaultValue="grid">
-                <ToggleGroupItem value="grid" aria-label="Grid view">
-                  <Grid2X2 className="h-4 w-4 text-[#151875]" />
-                </ToggleGroupItem>
-                <ToggleGroupItem value="list" aria-label="List view">
-                  <List className="h-4 w-4 text-[#151875]" />
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-          </div>
-        </div>
+      <div className="flex justify-center items-center mt-14">
+        <Image
+          src={"/sl7.png"}
+          alt="brands-img"
+          width={904}
+          height={93}
+          className="cursor-pointer"
+        />
       </div>
-
-      <div className="container mx-auto px-4 mb-[125px]  ">
-        <div className="mx-auto grid grid-cols-2 gap-10 ">
-          <Card className="group relative w-[270px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g1.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[270px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g1.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g3.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g4.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g5.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g6.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g7.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g8.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g9.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g10.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g11.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="group relative w-[250px]">
-            {/* Product Image Container */}
-            <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
-              <Image
-                src="/g12.png"
-                alt="Modern chair"
-                fill
-                className="object-contain p-8"
-              />
-              {/* Hover Actions */}
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <ShoppingCart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Heart className="h-5 w-5" />
-                </button>
-                <button className="h-9 w-9 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-primary hover:text-white transition-colors">
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Product Info */}
-            <div className="text-center">
-              <h3 className="text-lg font-bold text-[#151875] mb-2">
-                Vel elit euismod
-              </h3>
-
-              {/* Color Options */}
-              <div className="flex justify-center gap-2 mb-3">
-                <div className="w-3 h-3 rounded-full bg-[#DE9034]" />
-                <div className="w-3 h-3 rounded-full bg-[#EC42A2]" />
-                <div className="w-3 h-3 rounded-full bg-[#8568FF]" />
-              </div>
-
-              {/* Prices */}
-              <div className="flex justify-center gap-3 text-sm">
-                <span className="text-[#151875]">$26.00</span>
-                <span className="text-[#FB2E86] line-through">$42.00</span>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </div>
-    </section>
+    </main>
   );
-}
+};
+
+export default Page;
+
