@@ -12,7 +12,7 @@ export default function Trending() {
     </div>
 
      {/* card div */}
-     <div className="container mx-auto px-4 mb-[53px]">
+     <div className="container w-full mx-auto mb-[53px]">
     <div className='mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
     <TrendingCard loop={TrendingCards}/>
     </div>

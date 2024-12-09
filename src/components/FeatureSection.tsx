@@ -12,11 +12,11 @@ function FeatureSection() {
     </div>
 
     {/* card div */}
-    <div className="container mx-auto px-4 mb-[53px]">
+    <div className="container w-full mx-auto px-4 mb-[53px]">
     <div className='mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
     <ProductCard loop={featureCards}/>
     </div>
-    
+
     <div  className='flex justify-center mt-[53px] mx-auto'>
         <Image src="/f-slide.png" alt="arrow" width={91} height={4}></Image></div>
     </div>
