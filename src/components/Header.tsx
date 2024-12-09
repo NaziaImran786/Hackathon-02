@@ -21,12 +21,12 @@ export default function Header() {
           </div>
 
           {/* Right side - Actions */}
-          <div className=" flex items-center space-x-6">
+          <div className=" flex items-center space-x-4 lg:space-x-6">
             <div className="flex items-center gap-2">
               <span className="font-semibold">English</span>
               <ChevronDown className="h-4 w-4" />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <span className="font-semibold">USD</span>
               <ChevronDown className="h-4 w-4" />
             </div>

@@ -43,7 +43,7 @@ export default function ProductHeader() {
             </p>
           </div>
 
-          <div className="flex items-center justify-end gap-6 mt-4">
+          <div className="hidden lg:flex items-center justify-end gap-6 mt-4">
             <div className="flex items-center gap-2">
               <span className="text-[#3F509E]">Per Page:</span>
               <Select defaultValue="10">

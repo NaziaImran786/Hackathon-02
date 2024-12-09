@@ -22,7 +22,7 @@ const CategoryCard = ({ loop }: { loop: CategoryCards[] }) => {
             </div>
 
             {/* Product Name */}
-            <div className="absolute top-[69.53%] left-[26.3%] right-[27.04%] text-[#FB2E86] font-lato font-bold text-[18px] text-center">
+            <div className="absolute top-[69.53%] left-[21.3%] right-[23.04%] text-[#FB2E86] font-lato font-bold text-[18px] text-center">
               {item.description}
             </div>
 

@@ -8,7 +8,7 @@ const LeatestCard = ({ loop }: { loop: LeatestCards[] }) => {
     <>
       {loop.map((item, index) => {
         return (
-          <Card className="relative w-[350px] h-[325px] bg-[#F7F7F7] shadow-lg hover:bg-[#2F1AC4]" key={index}>
+          <Card className="relative w-[300px] h-[325px] bg-[#F7F7F7] shadow-lg" key={index}>
             
             <div className="bg-[#F7F7F7]  absolute left-[19.19%] right-[19.19%] top-[14.44%] bottom-[3.25%] ">
               {/* Image goes here */}
@@ -16,24 +16,24 @@ const LeatestCard = ({ loop }: { loop: LeatestCards[] }) => {
                 src={item.src}
                 alt="Cantilever chair"
                 width={267}
-                height={297}
+                height={277}
                 objectFit="cover"
                 className="w-[267px] h-[277px] object-contain"
               ></Image>
             </div>
 
             {/* Title */}
-            <div className="absolute left-0 right-[56.67%] bg-white top-[93.32%] bottom-[1.45%] text-[#151875] font-[Josefin Sans] text-[16px] leading-[19px]">
+            <div className="absolute left-0 right-[33.67%] bg-white top-[93.32%] bottom-[1.45%] text-[#151875] font-[Josefin Sans] text-[16px] leading-[19px]">
               {item.description}
             </div>
 
             {/* Price */}
-            <div className="absolute left-[71.08%] right-[16.97%] top-[93.64%] bottom-[1.79%] bg-white text-[#151875] font-[Josefin Sans] text-[14px] leading-[16px]">
+            <div className="absolute left-[67.08%] right-[16.97%] top-[93.64%] bottom-[1.79%] bg-white text-[#151875] font-[Josefin Sans] text-[14px] leading-[16px]">
               {item.code}
             </div>
 
             {/* Old Price */}
-            <div className="absolute left-[85.41%] right-[4.32%] top-[94.27%] bottom-[1.81%] bg-white text-[#FB2448] font-[Josefin Sans] text-[12px] leading-[14px] line-through">
+            <div className="absolute left-[78.41%] right-[4.32%] top-[94.27%] bottom-[1.81%] bg-white text-[#FB2448] font-[Josefin Sans] text-[12px] leading-[14px] line-through">
               {item.price}
             </div>
 

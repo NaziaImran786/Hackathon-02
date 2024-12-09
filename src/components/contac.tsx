@@ -22,7 +22,7 @@ export default function ContactForm() {
   return (
     <form 
       onSubmit={handleSubmit}
-      className="w-full max-w-[534px] space-y-6"
+      className="w-full max-w-[434px] space-y-4 lg:space-y-6"
     >
       <div className="grid grid-cols-2 gap-4">
         <Input

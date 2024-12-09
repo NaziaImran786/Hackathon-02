@@ -6,12 +6,12 @@ function Shopex() {
     <section className='w-full 2xl:w-[1920px] mx-auto mt-[129px] mb-[130px] '>
       {/* heading */}
       <div className="container mx-auto px-4 text-center mb-[60px] ">
-        <h1 className='text-[24px] lg:text-[42px] font-bold text-[#1A0B5B] font-josefin-sans'>Leatest Products</h1>
+        <h1 className='text-[24px] lg:text-[42px] font-bold text-[#1A0B5B] font-josefin-sans'>What Shopex Offer!</h1>
       </div>
 
     <div className="container mx-auto px-4 mb-[130px]">
       <div className='mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
-        <div className='h-[270px] w-320px]  mt-[56px]'>
+        <div className='h-[270px] w-320px]  mt-[56px] hover:scale-110'>
             <div className='w-[65px] h-[65px] mx-[102px]'>
             <Image src="/s2.png" alt="card" width={65} height={65}></Image>
             </div>            
@@ -20,7 +20,7 @@ function Shopex() {
             </div>
         </div>
 
-        <div className='h-[270px] w-320px] mt-[56px]'>
+        <div className='h-[270px] w-320px] mt-[56px] hover:scale-110'>
             <div className='w-[65px] h-[65px] mx-[102px] '>
             <Image src="/s3.png" alt="card" width={65} height={65}></Image>
             </div>            
@@ -29,7 +29,7 @@ function Shopex() {
             </div>
         </div>
 
-        <div className='h-[270px] w-320px]  mt-[56px]'>
+        <div className='h-[270px] w-320px]  mt-[56px] hover:scale-110'>
             <div className='w-[65px] h-[65px] mx-[102px]   '>
             <Image src="/s4.png" alt="card" width={65} height={65}></Image>
             </div>            
@@ -38,7 +38,7 @@ function Shopex() {
             </div>
         </div>
 
-        <div className='h-[270px] w-320px]  mt-[56px]'>
+        <div className='h-[270px] w-320px]  mt-[56px] hover:scale-110'>
             <div className='w-[65px] h-[65px] mx-[102px]   '>
             <Image src="/s1.png" alt="card" width={65} height={65}></Image>
             </div>            

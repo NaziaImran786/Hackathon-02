@@ -19,28 +19,28 @@ export default function Trending() {
     </div>
 
     <div className='container lg:mx-auto px-4 mt-[39px] flex lg:flex-row flex-col '>
-        <div className='h-[270px] w-[420px] ml-[29px] '>
-            <Image src="/tb1.png" alt="arrow" width={420} height={270}></Image>
+        <div className='relative h-[270px] w-[300px] lg:w-[420px] lg:mr-[29px] '>
+            <Image src="/tb1.png" alt="arrow" layout='fill' objectFit='cover'></Image>
         </div>
 
-        <div className='h-[270px] w-[420px] ml-[24px]'>
-            <Image src="/tb2.png" alt="arrow" width={420} height={270}></Image>
+        <div className='relative h-[270px] w-[300px] lg:w-[420px] lg:mr-[24px]'>
+            <Image src="/tb2.png" alt="arrow" layout='fill' objectFit='cover'></Image>
         </div>
 
         <div className='h-[270px] w-[267px] '>
-            <div className='h-[74px] w-[267px] mb-[20px]'>
-            <Image src="/tp1.png" alt="arrow" width={267} height={74}></Image>
+            <div className='relative h-[74px] w-[267px] mb-[20px]'>
+            <Image src="/tp1.png" alt="arrow" layout='fill' objectFit='cover'></Image>
             </div>
 
-            <div className='h-[74px] w-[267px] mb-[20px]'>
-            <Image src="/tp2.png" alt="arrow" width={267} height={74}></Image>
+            <div className='relative h-[74px] w-[267px] mb-[20px]'>
+            <Image src="/tp2.png" alt="arrow" layout='fill' objectFit='cover'></Image>
             </div>
 
-            <div className='h-[74px] w-[267px] '>
-            <Image src="/tp3.png" alt="arrow" width={267} height={74}></Image>
+            <div className='relative h-[74px] w-[267px] '>
+            <Image src="/tp3.png" alt="arrow" layout='fill' objectFit='cover'></Image>
             </div>
         </div>
-
+ 
     </div>
 
     </section>

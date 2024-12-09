@@ -8,7 +8,7 @@ const ProductCard = ({ loop }: { loop: FeatureCard[] }) => {
     <>
     {loop.map((item, index) => {
         return (
-    <Card className="relative w-[250px] h-[361px] bg-white shadow-lg hover:bg-[#2F1AC4]" 
+    <Card className="relative w-[230px] h-[341px] bg-white shadow-lg hover:bg-[#2F1AC4]" 
     key={index}
     >     
       
@@ -24,7 +24,7 @@ const ProductCard = ({ loop }: { loop: FeatureCard[] }) => {
       </div>
 
       {/* Product Name */}
-      <div className="absolute top-[69.53%] left-[26.3%] right-[27.04%] text-[#FB2E86] font-lato font-bold text-[18px] text-center">
+      <div className="absolute top-[69.53%] left-[20.3%] right-[22.04%] text-[#FB2E86] font-lato font-bold text-[18px] text-center">
         {item.description}
       </div>
 
@@ -38,12 +38,12 @@ const ProductCard = ({ loop }: { loop: FeatureCard[] }) => {
       )}
 
       {/* Product Code */}
-      <div className="absolute top-[83.38%] left-[25.07%] right-[25.26%] text-[#151875] font-josefin text-sm text-center">
+      <div className="absolute top-[83.38%] left-[22.07%] right-[22.26%] text-[#151875] font-josefin text-sm text-center">
         {item.code}
       </div>
 
       {/* Product Price */}
-      <div className="absolute top-[90.58%] left-[42.59%] right-[41.11%] text-[#151875] font-lato text-sm text-center">
+      <div className="absolute top-[90.58%] left-[38.59%] right-[41.11%] text-[#151875] font-lato text-sm text-center">
         {item.price}
       </div>
     </Card>
