@@ -1,90 +1,69 @@
-'use client'
+'use client';
 
-import * as React from "react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import * as React from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Login() {
   return (
-  <section className=" w-full py-10 ">
-       <div className="w-full px-[40px] md:pl-[120px] h-[286px] bg-[#F6F5FF] ">
-        {/* Banner content can be added here */}
-
-        <div className="w-[314px] pt-[106px] ">
-          <h1 className="text-[36px] leading-[42px] font-['Josefin_Sans'] text-[#101750] text-center mb-2">
-            My Account
-          </h1>
-
-          <div className="flex items-center justify-center gap-1 text-base font-medium font-['Lato']">
-            <span className="text-black">Home</span>
-            <span className="text-black">.</span>
-            <span className="text-black">Pages</span>
-            <span className="text-black">.</span>
-            <span className="text-[#FB2E86]">My Account</span>
-          </div>
-        </div>
-      </div>
-    
-    <div  className=" w-[544px] h-[453px] mx-auto flex mt-[60px] mb-[140px] ">
-   
-    
-    <div className="flex w-full items-center justify-center mb-10 px-[135px] p-4">
-      <div className="w-full mx-auto ">
-
+    <section className="w-full min-h-screen flex items-center justify-center bg-[#F6F5FF] px-4">
+      {/* Login Card */}
+      <div className="w-full max-w-md bg-white p-8 shadow-lg rounded-lg">
         {/* Header */}
-        <div className="flex flex-col items-center gap-4">
-          <h1 className="font-inter text-[36px] font-medium ">
-          Log in 
-          </h1>
-          <p className="font-poppins ">
-            Enter your details below
-          </p>
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold text-[#101750]">Log in</h1>
+          <p className="text-sm text-gray-600">Enter your details below</p>
         </div>
 
         {/* Form */}
-        <form className="flex flex-col gap-4">
-          <div className="flex flex-col gap-4 ">
-                        
-
-            {/* Email/Phone Input */}
-            <div className="space-y-2">
-              <Input 
-                type="text"
-                placeholder="Email or Phone Number"
-                className=" w-[400px] mt-4 border-2  rounded-black px-2 font-poppins placeholder:text-black/40 focus-visible:ring-0"
-              />
-            </div>
-
-            {/* Password Input */}
-            <div className="">
-              <Input 
-                type="password"
-                placeholder="Password"
-                className="w-[400px] mt-4 border-2  rounded-black px-2 font-poppins placeholder:text-black/40 focus-visible:ring-0"
-              />
-            </div>
+        <form className="space-y-6">
+          {/* Email/Phone Input */}
+          <div>
+            <Input
+              type="text"
+              placeholder="Email or Phone Number"
+              className="w-full border-2 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FB2E86]"
+            />
           </div>
-          </form>
 
-          <span className="text-[#FB2E86] mt-8">forget password?</span>
-          {/* Create Account Button */}
-          <div className="flex flex-col items-center justify-center space-x-4 font-poppins text-base">
-          <Link href="/">
-          <Button 
-            className="w-[400px] bg-[#FB2E86] hover:bg-[#FB2E86]/90 font-poppins h-8 mt-[20px] ml-[100px] text-base"
+          {/* Password Input */}
+          <div>
+            <Input
+              type="password"
+              placeholder="Password"
+              className="w-full border-2 rounded-md px-4 py-2 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FB2E86]"
+            />
+          </div>
+
+          {/* Forgot Password */}
+          <div className="text-right">
+            <Link href="#" className="text-sm text-[#FB2E86] hover:underline">
+              Forgot password?
+            </Link>
+          </div>
+
+          {/* Login Button */}
+          <Button
             type="submit"
+            className="w-full bg-[#FB2E86] text-white py-2 rounded-md hover:bg-[#e61d76] transition"
           >
             Login
-          </Button>  </Link>    
-        
-        {/* Footer */}        
-                   
+          </Button>
+        </form>
+
+        {/* Footer */}
+        <div className="text-center mt-4">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link href="/register" className="text-[#FB2E86] hover:underline">
+              Create one
+            </Link>
+          </p>
         </div>
       </div>
-    </div>
-    </div>
     </section>
-  )
+  );
 }
+
 
