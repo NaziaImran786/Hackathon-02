@@ -31,7 +31,7 @@ function LeatestProduct() {
 
     {/* card div */}
     <div className="container mx-auto px-4 mb-[53px] pl-[32px]">
-    <div className='mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+    <div className='mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 hover:scale-[1.1]'>
     <LeatestCard loop={leatestCards}/>
     </div>
     </div>

@@ -8,7 +8,7 @@ const ProductCard = ({ loop }: { loop: FeatureCard[] }) => {
     <>
     {loop.map((item, index) => {
         return (
-    <Card className="relative w-[240px] h-[361px] bg-white shadow-lg hover:bg-[#2F1AC4]" 
+    <Card className="relative w-[250px] h-[361px] bg-white shadow-lg hover:bg-[#2F1AC4]" 
     key={index}
     >     
       
