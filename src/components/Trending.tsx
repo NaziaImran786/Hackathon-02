@@ -17,7 +17,8 @@ export default function Trending() {
     <TrendingCard loop={TrendingCards}/>
     </div>
     </div>
-
+     
+     {/* Trending bottom card */}
     <div className='container lg:mx-auto px-4 mt-[39px] flex lg:flex-row flex-col '>
         <div className='relative h-[270px] w-[300px] lg:w-[420px] lg:mr-[29px] '>
             <Image src="/tb1.png" alt="arrow" layout='fill' objectFit='cover'></Image>
