@@ -2,7 +2,7 @@ import FilterSection from "@/components/FilterSection";
 import Image from "next/image";
 import React from "react";
 
-const shoppingCart = [
+const cart = [
   {
     name: "Ut diam consequat",
     color: "Brown",
@@ -55,7 +55,7 @@ const Page = () => {
               <p>Quanity</p>
               <p>Total</p>
             </div>
-            {shoppingCart.map((item, index) => (
+            {cart.map((item, index) => (
               <div
                 className="mt-8 grid lg:grid-cols-4 grid-cols-2 items-center gap-y-4"
                 key={index}

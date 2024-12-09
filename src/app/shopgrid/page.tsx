@@ -11,7 +11,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Grid2X2, Heart, List, Search, ShoppingCart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-export default function ProductHeader() {
+export default function Productgrid() {
   return (
     <section>
       <div className="w-full px-[40px] md:pl-[120px] h-[286px] bg-[#F6F5FF] ">
