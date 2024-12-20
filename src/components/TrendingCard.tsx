@@ -16,9 +16,9 @@ const TrendingCard = ({ loop }: { loop: TrendingCards[] }) => {
         <Image
           src={item.src}
           alt="Cantilever chair"
-          width={150}
-          height={150}
-          className="w-[150px] h-[150px] object-contain"
+          width={247}
+          height={244}
+          className="w-[247px] h-[244px] object-contain"
         />
       </div>
 

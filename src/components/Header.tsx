@@ -34,7 +34,7 @@ export default function Header() {
               <User className="h-4 w-4" />
               <span className="font-semibold">Login</span>
             </Link>
-            <Link href="/shopgrid" className="flex items-center gap-2 hover:text-gray-200">
+            <Link href="/demo" className="flex items-center gap-2 hover:text-gray-200">
               <Heart className="h-4 w-4" />
               <span className="font-semibold">Wishlist</span>
             </Link>

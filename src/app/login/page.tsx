@@ -7,9 +7,23 @@ import Link from "next/link";
 
 export default function Login() {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-[#F6F5FF] px-4">
+    <>
+    <div className="bg-[#F6F5FF] py-16 lg:py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-[#101750] mb-4">Login</h2>
+          <div className="flex items-center space-x-2 text-sm lg:text-base">
+            <Link href="/"><span>Home</span></Link>
+            <span>.</span>
+            <span>Pages</span>
+            <span>.</span>
+            <span className="text-[#FB2E86]">Login</span>
+          </div>
+        </div>
+      </div>
+   
+    <section className="w-full min-h-screen flex  items-center justify-center bg-[#ffffff] px-4">      
       {/* Login Card */}
-      <div className="w-full max-w-md bg-white p-8 shadow-lg rounded-lg">
+      <div className="w-full max-w-md bg-white p-8 shadow-xl rounded-lg">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-[#101750]">Log in</h1>
@@ -63,6 +77,7 @@ export default function Login() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

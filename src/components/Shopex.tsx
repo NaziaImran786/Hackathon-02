@@ -51,9 +51,9 @@ function Shopex() {
       </div>
 
         {/* Relative container for the hero image */}
-      <div className=" min-w-[400px] lg:w-full min-h-[300px] lg:h-[579px] bg-[#F1F0FF] mx-auto">
+      <div className=" min-w-[200px] lg:w-full min-h-[300px] lg:h-[579px] bg-[#F1F0FF] mx-auto">
      
-      <div className="min-w-[400px] lg:w-[1050px] min-h-[300px] lg:h-[550px] mx-auto my-[15px]">
+      <div className="min-w-[200px] lg:w-[1050px] min-h-[300px] lg:h-[550px] mx-auto my-[15px]">
         {/* Background promotional image */}
         <Image 
           src="/unique.png" 

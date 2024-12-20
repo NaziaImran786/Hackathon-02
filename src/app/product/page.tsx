@@ -1,6 +1,7 @@
 import FilterSection from "@/components/FilterSection";
 import { Heart, ShoppingCart, ZoomIn, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
   {
@@ -103,6 +104,7 @@ const Page = () => {
             className="flex justify-start gap-y-14 gap-x-8 items-center lg:ml-24 cursor-pointer hover:scale-110 transition-all lg:flex-row flex-col"
             key={index}
           >
+            <Link href="/productdetail">
             <div>
               <Image
                 src={item.img}
@@ -112,20 +114,13 @@ const Page = () => {
                 className="w-auto h-auto"
               />
             </div>
+            </Link>
             <div className="lg:w-[550px] w-full flex justify-center lg:block items-center flex-col">
               <div className="flex items-center gap-x-4">
                 <h1 className="text-1 font-bold text-[19px] text-indigo-900">
                   {item.name}
                 </h1>
-                <div>
-                  <Image
-                    src={"/pagesPage/pagination.png"}
-                    alt="pagination"
-                    width={42}
-                    height={10}
-                    className="w-auto h-auto"
-                  />
-                </div>
+                                
               </div>
               <div className="flex items-center gap-x-4">
                 <p className="text-1 text-indigo-900">{item.price}</p>
@@ -161,7 +156,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center mt-14">
+      {/* <div className="flex justify-center items-center mt-14">
         <Image
           src={"/topProduct/brands.png"}
           alt="brands-img"
@@ -169,7 +164,7 @@ const Page = () => {
           height={93}
           className="cursor-pointer"
         />
-      </div>
+      </div> */}
     </main>
   );
 };

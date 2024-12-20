@@ -8,7 +8,7 @@ const CategoryCard = ({ loop }: { loop: CategoryCards[] }) => {
     <>
       {loop.map((item, index) => {
         return (
-          <Card className="relative w-[230px] h-[350px] bg-transparent" key={index} >
+          <Card className="relative w-[230px] h-[350px] border-0 shadow-0 outline-none bg-transparent" key={index} >
             
             {/* Product Image */}
             <div className="absolute w-full h-[236px] bg-[#F6F7FB] top-0 left-0 flex items-center rounded-[50%] border-b-4 hover:border-blue-600  justify-center">

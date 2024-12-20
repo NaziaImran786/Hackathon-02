@@ -42,8 +42,7 @@ const Page = () => {
         textTitle="Shopping Cart"
         textNavigation="Home . Pages ."
         pageName="Shopping Cart"
-        className="hidden"
-      />
+        className="hidden" />
       <div className="mt-16">
         {/* Container with responsive layout */}
         <div className="flex flex-col lg:flex-row">

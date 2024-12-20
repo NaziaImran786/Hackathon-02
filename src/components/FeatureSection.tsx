@@ -6,7 +6,7 @@ import { featureCards } from '@/constant/featurecard';
 function FeatureSection() {
   return (
     <>
-      <section className="w-full mt-[129px]">
+      <section className="w-full 2xl:w-[1920px] mx-auto mt-[129px]">
         {/* Heading */}
         <div className="container mx-auto px-4 text-center mb-[48px]">
           <h1 className="text-[24px] lg:text-[42px] font-bold text-[#1A0B5B] font-josefin-sans">
@@ -16,7 +16,7 @@ function FeatureSection() {
 
         {/* Cards Section */}
         <div className="container mx-auto px-4 mb-[53px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+          <div className="x-auto gap-[29px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
             <ProductCard loop={featureCards} />
           </div>
 

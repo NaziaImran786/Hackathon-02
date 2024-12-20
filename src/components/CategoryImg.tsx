@@ -8,8 +8,8 @@ function CategoryImg() {
     <section className="w-full 2xl:w-[1920px] mx-auto mt-[129px] mb-[130px]">
       <div className="w-full mb-[125px]">
         {/* Image */}
-        <div className="relative min-w-[300px] min-h-[250px] lg:w-full w-[462px] mx-auto">
-          <Image src="/c5.png" alt="category" layout="fill" objectFit="cover" />
+        <div className="relative lg:w-full w-[462px] mx-auto">
+          <Image src="/c5.png" alt="category" layout="fill" objectFit="" />
         </div>
 
         {/* Heading */}

@@ -22,7 +22,7 @@ export default function Trending() {
 
       {/* Trending Bottom Cards */}
       <div className="container mx-auto px-4 mt-[39px] flex lg:flex-row flex-col gap-6">
-        <div className="relative h-[270px] w-[300px] lg:w-[420px]">
+        <div className="relative h-[270px] w-full lg:w-[420px] hover:scale-110">
           <Image
             src="/tb1.png"
             alt="Trending 1"
@@ -31,7 +31,7 @@ export default function Trending() {
           />
         </div>
 
-        <div className="relative h-[270px] w-[300px] lg:w-[420px]">
+        <div className="relative h-[270px] w-full lg:w-[420px] hover:scale-110">
           <Image
             src="/tb2.png"
             alt="Trending 2"
@@ -40,7 +40,7 @@ export default function Trending() {
           />
         </div>
 
-        <div className="h-auto w-[300px] lg:w-[267px] flex flex-col gap-4 items-center">
+        <div className="h-auto w-full lg:w-[267px] flex flex-col gap-4 items-center hover:scale-110">
           <div className="relative h-[74px] w-full">
             <Image
               src="/tp1.png"
@@ -49,7 +49,7 @@ export default function Trending() {
               objectFit="cover"
             />
           </div>
-          <div className="relative h-[74px] w-full">
+          <div className="relative h-[74px] w-full hover:scale-110">
             <Image
               src="/tp2.png"
               alt="Trending Small 2"
@@ -57,7 +57,7 @@ export default function Trending() {
               objectFit="cover"
             />
           </div>
-          <div className="relative h-[74px] w-full">
+          <div className="relative h-[74px] w-full hover:scale-110">
             <Image
               src="/tp3.png"
               alt="Trending Small 3"
