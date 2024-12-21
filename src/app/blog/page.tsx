@@ -149,10 +149,10 @@ export default function BlogPage() {
             
             {/* Pagination */}
             <div className="flex justify-center gap-4 mt-8">
-              <Button className="bg-[#FB2CA8] hover:bg-[#FB2CA8]/90 h-8 w-8 p-0">1</Button>
-              <Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">2</Button>
-              <Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">3</Button>
-              <Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">4</Button>
+              <Link href="/blog"><Button className="bg-[#FB2CA8] hover:bg-[#FB2CA8]/90 h-8 w-8 p-0">1</Button></Link>
+              <Link href="/blog/singleblog"><Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">2</Button></Link>
+              <Link href="/blog/singleblog"><Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">3</Button></Link>
+              <Link href="/blog/singleblog"><Button variant="outline" className="h-8 w-8 p-0 text-[#E0D3F5]">4</Button></Link>
             </div>
           </div>
 

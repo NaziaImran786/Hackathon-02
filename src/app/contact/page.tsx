@@ -1,6 +1,7 @@
 import ContactForm from "@/components/contac";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutContact() {
   return (
@@ -14,7 +15,7 @@ export default function AboutContact() {
           </h1>
 
           <div className="flex items-center justify-center gap-1 text-base font-medium font-['Lato']">
-            <span className="text-black">Home</span>
+          <Link href="/"><span className="text-black">Home</span></Link>
             <span className="text-black">.</span>
             <span className="text-black">Pages</span>
             <span className="text-black">.</span>

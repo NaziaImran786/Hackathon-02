@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface textType {
     textTitle: string;
     textNavigation: string;
@@ -18,7 +20,7 @@ interface textType {
             {textTitle}
           </h1>
           <p className="lato mt-2 ">
-            {textNavigation}
+          <Link href="/">{textNavigation}</Link>
             <span className="text-pink-500 font-semibold">{pageName}</span>
           </p>
         </div>
