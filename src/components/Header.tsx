@@ -2,6 +2,7 @@
 
 import { ChevronDown, Heart, Mail, Phone, ShoppingCart, User } from 'lucide-react'
 import Link from "next/link"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 
 export default function Header() {
   return (
@@ -21,27 +22,33 @@ export default function Header() {
           </div>
 
           {/* Right side - Actions */}
-          <div className=" flex items-center space-x-4 lg:space-x-6">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">English</span>
-              <ChevronDown className="h-4 w-4" />
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <span className="font-semibold">USD</span>
-              <ChevronDown className="h-4 w-4" />
-            </div>
-            <Link href="/login" className="flex items-center gap-2 hover:text-gray-200">
-              <User className="h-4 w-4" />
-              <span className="font-semibold">Login</span>
-            </Link>
-            <Link href="/demo" className="flex items-center gap-2 hover:text-gray-200">
-              <Heart className="h-4 w-4" />
-              <span className="font-semibold">Wishlist</span>
-            </Link>
-            <Link href="/cart" className="flex items-center hover:text-gray-200">
-              <ShoppingCart className="h-5 w-5" />
-            </Link>
-          </div>
+          <div className="flex gap-1 lg:gap-6">
+            <Select defaultValue="english">
+              <SelectTrigger className="w-[84px] lg:w-24 bg-transparent border-0 text-white">
+                <SelectValue placeholder="Language" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="english">English</SelectItem>
+                <SelectItem value="urdu">Urdu</SelectItem>
+                <SelectItem value="spanish">Spanish</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select defaultValue="usd">
+              <SelectTrigger className="w-[76px] lg:w-24 bg-transparent border-0 text-white">
+                <SelectValue placeholder="Currency" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="usd">USD</SelectItem>
+                <SelectItem value="pkr">PKR</SelectItem>
+                <SelectItem value="eur">EUR</SelectItem>
+              </SelectContent>
+            </Select>
+            <Link href="/login" className='py-2'><button className="text-s">Login</button></Link>
+            <Link href="/whishlist" className='py-2'><button className="text-sm">Wishlist</button></Link>
+            <Link href="/cart" className='py-2'><button className="text-sm">
+              <ShoppingCart className="h-4 w-4" />
+            </button></Link>
+          </div>         
         </div>
       </div>
     </header>

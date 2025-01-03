@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { name: "Home", href: "/" },
   { name: "Pages", href: "/error" },
   { name: "Products", href: "/product" },
   { name: "Blog", href: "/blog" },
@@ -13,8 +12,17 @@ const navItems = [
   { name: "Contact", href: "/contact" },
 ];
 
+const homeSubLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+  { name: "FAQ", href: "/faq" },
+];
+
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
+  const [isMobileHomeOpen, setIsMobileHomeOpen] = useState(false);
 
   return (
     <nav className="w-full py-4 bg-white">
@@ -30,20 +38,39 @@ export default function Nav() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
+            {/* Home Link with Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsHomeDropdownOpen(true)}
+              onMouseLeave={() => setIsHomeDropdownOpen(false)}
+            >
+              <button className="flex items-center text-base text-[#0D0E43] font-lato hover:text-[#FB2E86] transition-colors">
+                Home
+                <ChevronDown className="ml-1 h-4 w-4 text-[#FB2E86]" />
+              </button>
+              {isHomeDropdownOpen && (
+                <div className="absolute top-full mt-1 bg-white border border-[#E7E6EF] shadow-lg rounded-md py-2 z-50">
+                  {homeSubLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="block px-4 py-2 text-base text-[#0D0E43] font-lato hover:bg-[#FB2E86] hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Other Links */}
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center text-base ${
-                  item.name === "Home"
-                    ? "text-[#FB2E86]"
-                    : "text-[#0D0E43]"
-                } font-lato hover:text-[#FB2E86] transition-colors`}
+                className="flex items-center text-base text-[#0D0E43] font-lato hover:text-[#FB2E86] transition-colors"
               >
                 {item.name}
-                {item.name === "Home" && (
-                  <ChevronDown className="ml-1 h-4 w-4 text-[#FB2E86]" />
-                )}
               </Link>
             ))}
           </div>
@@ -86,49 +113,50 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 transition-opacity ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      ></div>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-white z-50 shadow-lg p-8 space-y-6">
+          {/* Home Link with Collapsible Dropdown */}
+          <div>
+            <button
+              onClick={() => setIsMobileHomeOpen(!isMobileHomeOpen)}
+              className="flex items-center text-base text-[#0D0E43] font-lato hover:text-[#FB2E86] transition-colors w-full text-left"
+            >
+              Home
+              <ChevronDown
+                className={`ml-2 h-4 w-4 transform ${
+                  isMobileHomeOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isMobileHomeOpen && (
+              <div className="mt-2 space-y-2 pl-4">
+                {homeSubLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="block text-base text-[#0D0E43] font-lato hover:text-[#FB2E86] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
-      <div
-        className={`fixed top-0 right-0 w-3/4 max-w-[300px] h-full bg-white z-50 shadow-lg transform transition-transform ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <button
-          className="absolute top-4 right-4 p-2 text-[#0D0E43]"
-          onClick={() => setIsMenuOpen(false)}
-          aria-label="Close Menu"
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-        <div className="p-8 space-y-6">
+          {/* Other Links */}
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className="block text-base text-[#0D0E43] font-lato hover:text-[#FB2E86] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
         </div>
-      </div>
+      )}
     </nav>
   );
 }
+

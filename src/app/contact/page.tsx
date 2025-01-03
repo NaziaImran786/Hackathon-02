@@ -104,7 +104,7 @@ export default function AboutContact() {
           </div>
 
           {/* Get In Touch Section */}
-          <div className="space-y-6 col-span-full py-2 mt-16 ">
+          <div className="space-y-6 col-span-full py-6 mt-16 ">
             <h2 className="font-['Josefin_Sans'] text-[36px] leading-[48px] text-[#151875]">
               Get In Touch
             </h2>

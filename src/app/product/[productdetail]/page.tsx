@@ -1,13 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Star, Heart, Facebook, Twitter, Instagram } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function ProductDetails() {
+export default function ProductDetails({params}: {params: {productdetail : number}}) {
+
+  const [paramImage, setParamImage] = useState(0)
+
   const [selectedImage, setSelectedImage] = useState(0)
   const images = [
     "/placeholder/d1.png?height=487&width=375",
@@ -15,6 +18,17 @@ export default function ProductDetails() {
     "/placeholder/d3.png?height=155&width=151",
     "/placeholder/d4.png?height=155&width=151"
   ]
+
+  useEffect(()=>{
+    const imgFunc = async ()=>{
+      const {productdetail} =await params
+
+      setParamImage(productdetail)
+    }
+
+    imgFunc()
+
+  },[])
 
   return (
     <div className="h-auto mb-[-140px] bg-white">
@@ -39,7 +53,7 @@ export default function ProductDetails() {
           <div className="space-y-4">
             <div className="aspect-[4/5] relative">
               <Image
-                src={images[selectedImage]}
+                src={`/g${paramImage}.png`}
                 alt="Product image"
                 fill
                 className="object-cover rounded-lg"

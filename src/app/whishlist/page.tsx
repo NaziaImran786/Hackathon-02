@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import Link from "next/link";
 
-export default function ShoppingCarts() {
+export default function Whishlist() {
   // State for cart items
   const [cartItems, setCartItems] = useState([
     {
@@ -117,43 +117,7 @@ export default function ShoppingCarts() {
 
   return (
     <div className="min-h-screen bg-white text-[#151875]">
-      {/* Top Bar */}
-      {/* <div className="w-full bg-[#7E33E0] text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex gap-6">
-            <span className="text-sm">mhhasanul@gmail.com</span>
-            <span className="text-sm">(12345)67890</span>
-          </div>
-          <div className="flex gap-6">
-            <Select defaultValue="english">
-              <SelectTrigger className="w-24 bg-transparent border-0 text-white">
-                <SelectValue placeholder="Language" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="english">English</SelectItem>
-                <SelectItem value="urdu">Urdu</SelectItem>
-                <SelectItem value="spanish">Spanish</SelectItem>
-              </SelectContent>
-            </Select>
-            <Select defaultValue="usd">
-              <SelectTrigger className="w-20 bg-transparent border-0 text-white">
-                <SelectValue placeholder="Currency" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="usd">USD</SelectItem>
-                <SelectItem value="pkr">PKR</SelectItem>
-                <SelectItem value="eur">EUR</SelectItem>
-              </SelectContent>
-            </Select>
-            <button className="text-sm">Login</button>
-            <button className="text-sm">Wishlist</button>
-            <button className="text-sm">
-              <ShoppingCart className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      </div> */}
-
+ 
       {/* Cart Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-3 gap-8">
@@ -263,30 +227,6 @@ export default function ShoppingCarts() {
                       Proceed To Checkout
                     </Link>
                   </Button>
-
-                  {/* <Button className="w-full bg-[#19D16F] hover:bg-[#19D16F]/90">
-                    Proceed To Checkout
-                  </Button> */}
-                </div>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-6 text-[#151875]">
-                <h2 className="text-xl font-semibold text-[#1D3178] mb-6">
-                  Calculate Shopping
-                </h2>
-                <div className="space-y-4">
-                  <Input placeholder="Bangladesh" />
-                  <Input placeholder="Mirpur Dhaka - 1200" />
-                  <Input placeholder="Postal Code" />
-                  <Button className="w-full bg-[#FB2E86] hover:bg-[#FB2E86]/90">
-                  <Link
-                      href="/shipping"
-                      className="w-full h-full flex items-center justify-center"
-                    >
-                    Calculate Shipping
-                    </Link>
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -296,4 +236,3 @@ export default function ShoppingCarts() {
     </div>
   );
 }
-

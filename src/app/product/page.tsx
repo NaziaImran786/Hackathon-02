@@ -104,7 +104,7 @@ const Page = () => {
             className="flex justify-start gap-y-14 gap-x-8 items-center lg:ml-24 cursor-pointer hover:scale-110 transition-all lg:flex-row flex-col"
             key={index}
           >
-            <Link href="/productdetail">
+            <Link href="/product/productdetail">
             <div>
               <Image
                 src={item.img}
@@ -155,16 +155,7 @@ const Page = () => {
             </div>
           </div>
         ))}
-      </div>
-      {/* <div className="flex justify-center items-center mt-14">
-        <Image
-          src={"/topProduct/brands.png"}
-          alt="brands-img"
-          width={904}
-          height={93}
-          className="cursor-pointer"
-        />
-      </div> */}
+      </div>    
     </main>
   );
 };

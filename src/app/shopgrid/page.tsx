@@ -87,7 +87,7 @@ export default function Productgrid() {
       <div className="container mx-auto px-4 mb-[125px]  ">
         <div className="mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((comment, index) => (
-          <Link href="/productdetail" key={index}>
+          <Link href={`/shopgrid/${comment}`} key={index}>
           <Card className="group relative w-[250px]">
             {/* Product Image Container */}
             <div className="relative aspect-[270/280] bg-[#F6F7FB] mb-5">
